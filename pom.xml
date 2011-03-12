@@ -26,6 +26,13 @@
     <packaging>maven-plugin</packaging>
 
     <name>Maven Github plugin</name>
+    
+    <url>https://github.com/kevinpollet/maven-github-plugin</url>
+    
+    <issueManagement>
+	    <url>https://github.com/kevinpollet/maven-github-plugin/issues</url>
+	    <system>Github</system>
+    </issueManagement>
 
     <scm>
         <url>https://github.com/kevinpollet/maven-github-plugin</url>
