@@ -1,173 +1,180 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  ~ Copyright 2011 Kevin Pollet
-  ~
-  ~ Licensed under the Apache License, Version 2.0 (the "License");
-  ~ you may not use this file except in compliance with the License.
-  ~ You may obtain a copy of the License at
-  ~
-  ~ http://www.apache.org/licenses/LICENSE-2.0
-  ~
-  ~ Unless required by applicable law or agreed to in writing, software
-  ~ distributed under the License is distributed on an "AS IS" BASIS,
-  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  ~ See the License for the specific language governing permissions and
-  ~ limitations under the License.
-  -->
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<!-- ~ Copyright 2011 Kevin Pollet ~ ~ Licensed under the Apache License, 
+	Version 2.0 (the "License"); ~ you may not use this file except in compliance 
+	with the License. ~ You may obtain a copy of the License at ~ ~ http://www.apache.org/licenses/LICENSE-2.0 
+	~ ~ Unless required by applicable law or agreed to in writing, software ~ 
+	distributed under the License is distributed on an "AS IS" BASIS, ~ WITHOUT 
+	WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. ~ See the 
+	License for the specific language governing permissions and ~ limitations 
+	under the License. -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-    <modelVersion>4.0.0</modelVersion>
+	<modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.maven.plugin</groupId>
-    <artifactId>maven-github-plugin</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <packaging>maven-plugin</packaging>
+	<groupId>com.github.maven.plugin</groupId>
+	<artifactId>maven-github-plugin</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>maven-plugin</packaging>
 
-    <name>Maven Github plugin</name>
-    
-    <url>https://github.com/kevinpollet/maven-github-plugin</url>
-    
-    <issueManagement>
-	    <url>https://github.com/kevinpollet/maven-github-plugin/issues</url>
-	    <system>Github</system>
-    </issueManagement>
-    
-    <licenses>
-    	<license>
-        	<name>Apache License 2</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
+	<name>Maven Github plugin</name>
 
-    <scm>
-        <url>https://github.com/kevinpollet/maven-github-plugin</url>
-        <connection>scm:git:git://github.com/kevinpollet/maven-github-plugin.git</connection>
-        <developerConnection>scm:git:git@github.com:kevinpollet/maven-github-plugin.git</developerConnection>
-    </scm>
+	<url>https://github.com/kevinpollet/maven-github-plugin</url>
 
-    <distributionManagement>
-        <repository>
-            <id>releases</id>
-            <url>https://github.com/kevinpollet/maven-repository/raw/master/releases</url>
-        </repository>
-        <snapshotRepository>
-            <id>snapshots</id>
-            <url>https://github.com/kevinpollet/maven-repository/raw/master/snapshots</url>
-        </snapshotRepository>
-    </distributionManagement>
+	<issueManagement>
+		<url>https://github.com/kevinpollet/maven-github-plugin/issues</url>
+		<system>Github</system>
+	</issueManagement>
 
-    <developers>
-        <developer>
-            <name>Kevin Pollet</name>
-            <email>pollet.kevin@gmail.com</email>
-        </developer>
-    </developers>
+	<licenses>
+		<license>
+			<name>Apache License 2</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <compiler.source.version>1.5</compiler.source.version>
-        <compiler.target.version>1.5</compiler.target.version>
-    </properties>
+	<scm>
+		<url>https://github.com/kevinpollet/maven-github-plugin</url>
+		<connection>scm:git:git://github.com/kevinpollet/maven-github-plugin.git</connection>
+		<developerConnection>scm:git:git@github.com:kevinpollet/maven-github-plugin.git</developerConnection>
+	</scm>
 
-    <dependencies>
-        <!--
-            Plugin API
-        -->
-        <dependency>
-            <groupId>org.apache.maven</groupId>
-            <artifactId>maven-plugin-api</artifactId>
-            <version>3.0.2</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.maven</groupId>
-            <artifactId>maven-core</artifactId>
-            <version>3.0.2</version>
-        </dependency>
+	<distributionManagement>
+		<repository>
+			<id>releases</id>
+			<url>https://github.com/kevinpollet/maven-repository/raw/master/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<url>https://github.com/kevinpollet/maven-repository/raw/master/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
 
-        <!--
-            Utils
-        -->
-        <dependency>
-            <groupId>commons-httpclient</groupId>
-            <artifactId>commons-httpclient</artifactId>
-            <version>3.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-core-lgpl</artifactId>
-            <version>1.6.3</version>
-        </dependency>
-        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-mapper-lgpl</artifactId>
-            <version>1.6.3</version>
-        </dependency>
-        <dependency>
-            <groupId>org.codehaus.plexus</groupId>
-            <artifactId>plexus-utils</artifactId>
-            <version>2.0.5</version>
-        </dependency>
-    </dependencies>
+	<developers>
+		<developer>
+			<name>Kevin Pollet</name>
+			<email>pollet.kevin@gmail.com</email>
+		</developer>
+	</developers>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version>
-                <configuration>
-                    <source>${compiler.source.version}</source>
-                    <source>${compiler.target.version}</source>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>com.mycila.maven-license-plugin</groupId>
-                <artifactId>maven-license-plugin</artifactId>
-                <version>1.9.0</version>
-                <executions>
-                    <execution>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <failIfMissing>true</failIfMissing>
-                    <strictCheck>true</strictCheck>
-                    <header>${project.basedir}/etc/licence.txt</header>
-                    <headerDefinitions>
-                        <headerDefinition>${project.basedir}/etc/javaLicenceHeader.xml</headerDefinition>
-                    </headerDefinitions>
-                    <excludes>
-                        <exclude>.gitignore</exclude>
-                        <exclude>**/*.textile</exclude>
-                        <exclude>**/javaLicenceHeader.xml</exclude>
-                    </excludes>
-                </configuration>
-            </plugin>
-            <plugin>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<compiler.source.version>1.5</compiler.source.version>
+		<compiler.target.version>1.5</compiler.target.version>
+	</properties>
+
+	<dependencies>
+		<!-- Plugin API -->
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-plugin-api</artifactId>
+			<version>3.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-core</artifactId>
+			<version>3.0.2</version>
+		</dependency>
+
+		<!-- Utils -->
+		<dependency>
+			<groupId>commons-httpclient</groupId>
+			<artifactId>commons-httpclient</artifactId>
+			<version>3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-core-lgpl</artifactId>
+			<version>1.6.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-lgpl</artifactId>
+			<version>1.6.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.plexus</groupId>
+			<artifactId>plexus-utils</artifactId>
+			<version>2.0.5</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>${compiler.source.version}</source>
+					<source>${compiler.target.version}</source>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.mycila.maven-license-plugin</groupId>
+				<artifactId>maven-license-plugin</artifactId>
+				<version>1.9.0</version>
+				<executions>
+					<execution>
+						<phase>verify</phase>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<failIfMissing>true</failIfMissing>
+					<strictCheck>true</strictCheck>
+					<header>${project.basedir}/etc/licence.txt</header>
+					<headerDefinitions>
+						<headerDefinition>${project.basedir}/etc/javaLicenceHeader.xml</headerDefinition>
+					</headerDefinitions>
+					<excludes>
+						<exclude>.gitignore</exclude>
+						<exclude>**/*.textile</exclude>
+						<exclude>**/javaLicenceHeader.xml</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
 				<version>2.1.2</version>
-				<configuration>
-					<encoding>UTF-8</encoding>
-				</configuration>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+						<configuration>
+							<encoding>UTF-8</encoding>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>2.7</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+						<configuration>
+							<encoding>UTF-8</encoding>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
-            <plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
 				<version>2.1</version>
 			</plugin>
-        </plugins>
-    </build>
+		</plugins>
+	</build>
 
 </project>
