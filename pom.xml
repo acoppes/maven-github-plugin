@@ -33,6 +33,14 @@
 	    <url>https://github.com/kevinpollet/maven-github-plugin/issues</url>
 	    <system>Github</system>
     </issueManagement>
+    
+    <licenses>
+    	<license>
+        	<name>Apache License 2</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 
     <scm>
         <url>https://github.com/kevinpollet/maven-github-plugin</url>
